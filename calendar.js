@@ -92,6 +92,7 @@
                 }
                 td = document.createElement('td');
                 td.innerHTML = count;
+                td.setAttribute("class", "dycalendar-date");
                 if (data.today.date === count && data.today.monthIndex === data.monthIndex && option.highlighttoday === true) {
                     td.setAttribute("class", "dycalendar-today-date");
                 }
@@ -390,7 +391,7 @@
                 targetDomObject = e.target || e.srcElement,
 
                 //other variables
-                date, month, year, btn, option, dateObj;
+                date, month, year, btn, option, dateObj, header;
 
             //prev-next button click
             //extra checks to make sure object exists and contains the class of interest
@@ -426,14 +427,37 @@
             //month click
             //extra checks to make sure object exists and contains the class of interest
             if ((targetDomObject) && (targetDomObject.classList) && (targetDomObject.classList.contains("dycalendar-span-month-year"))) {
-                option = JSON.parse(targetDomObject.parentElement.getAttribute("data-option"));
-                dateObj = new Date();
+                console.log("month clicked!");
+                // option = JSON.parse(targetDomObject.parentElement.getAttribute("data-option"));
+                // dateObj = new Date();
 
-                option.date = dateObj.getDate();
-                option.month = dateObj.getMonth();
-                option.year = dateObj.getFullYear();
+                // option.date = dateObj.getDate();
+                // option.month = dateObj.getMonth();
+                // option.year = dateObj.getFullYear();
+
+                // drawCalendar(option);
+            }
+
+            // date click
+            if ((targetDomObject) && (targetDomObject.classList) && (targetDomObject.classList.contains("dycalendar-date"))) {
+                console.log("date clicked!");
+                header = targetDomObject.parentElement.parentElement.parentElement.parentElement.parentElement.firstChild;
+                option = JSON.parse(header.getAttribute("data-option"));
+                option.date = parseInt(targetDomObject.innerHTML);
+                header.setAttribute("data-option", JSON.stringify(option));
 
                 drawCalendar(option);
+
+                console.log("updated option:");
+                console.log(option);
+                // option = JSON.parse(targetDomObject.parentElement.getAttribute("data-option"));
+                // dateObj = new Date();
+                // option.date = dateObj.getDate();
+                // option.month = dateObj.getMonth();
+                // option.year = dateObj.getFullYear();
+
+                // console.log("options...");
+                // console.log(option);
             }
         };
     }
