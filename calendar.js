@@ -70,6 +70,7 @@
         while (c <= 6) {
             td = document.createElement("td");
             td.innerHTML = count;
+            td.setAttribute("class", "dycalendar-date");
             if (data.today.date === count && data.today.monthIndex === data.monthIndex && option.highlighttoday === true) {
                 td.setAttribute("class", "dycalendar-today-date");
             }
@@ -119,7 +120,8 @@
 
         var
             table,
-            div, container, elem;
+            div, container, elem,
+            dateValue, monthValue, yearValue, targetId;
 
         //get table
         table = createMonthTable(data, option);
@@ -185,6 +187,31 @@
 
         //add body div to container div
         container.appendChild(div);
+
+        //targetId
+        targetId = option.target.replace("#", "");
+
+        //add hidden values
+        dateValue = document.createElement("input");
+        dateValue.id = targetId + "-date";
+        dateValue.setAttribute("type", "hidden");
+        dateValue.setAttribute("value", option.date);
+        
+        monthValue = document.createElement("input");
+        monthValue.id = targetId + "-month";
+        monthValue.setAttribute("type", "hidden");
+        monthValue.setAttribute("value", (option.month + 1));
+        
+        yearValue = document.createElement("input");
+        yearValue.id = targetId + "-year";
+        yearValue.setAttribute("type", "hidden");
+        yearValue.setAttribute("value", option.year);
+
+        //add hidden values to container
+        container.appendChild(dateValue);
+        container.appendChild(monthValue);
+        container.appendChild(yearValue);
+        
 
         //return container
         return container;
@@ -425,9 +452,6 @@
                 header.setAttribute("data-option", JSON.stringify(option));
 
                 drawCalendar(option);
-
-                console.log("updated option:");
-                console.log(option);
             }
 
             // date click
@@ -439,17 +463,6 @@
                 header.setAttribute("data-option", JSON.stringify(option));
 
                 drawCalendar(option);
-
-                console.log("updated option:");
-                console.log(option);
-                // option = JSON.parse(targetDomObject.parentElement.getAttribute("data-option"));
-                // dateObj = new Date();
-                // option.date = dateObj.getDate();
-                // option.month = dateObj.getMonth();
-                // option.year = dateObj.getFullYear();
-
-                // console.log("options...");
-                // console.log(option);
             }
         };
     }
