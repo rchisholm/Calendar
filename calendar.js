@@ -418,7 +418,7 @@
                 targetDomObject = e.target || e.srcElement,
 
                 //other variables
-                date, month, year, btn, option, dateObj, header;
+                date, month, year, btn, option, header;
 
             //prev-next button click
             //extra checks to make sure object exists and contains the class of interest
@@ -456,7 +456,6 @@
 
             // date click
             if ((targetDomObject) && (targetDomObject.classList) && (targetDomObject.classList.contains("dycalendar-date"))) {
-                console.log("date clicked!");
                 header = targetDomObject.parentElement.parentElement.parentElement.parentElement.parentElement.firstChild;
                 option = JSON.parse(header.getAttribute("data-option"));
                 option.date = parseInt(targetDomObject.innerHTML);
