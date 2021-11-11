@@ -430,20 +430,6 @@
                 console.log(option);
             }
 
-            //month click
-            //extra checks to make sure object exists and contains the class of interest
-            if ((targetDomObject) && (targetDomObject.classList) && (targetDomObject.classList.contains("dycalendar-span-month-year"))) {
-                console.log("month clicked!");
-                // option = JSON.parse(targetDomObject.parentElement.getAttribute("data-option"));
-                // dateObj = new Date();
-
-                // option.date = dateObj.getDate();
-                // option.month = dateObj.getMonth();
-                // option.year = dateObj.getFullYear();
-
-                // drawCalendar(option);
-            }
-
             // date click
             if ((targetDomObject) && (targetDomObject.classList) && (targetDomObject.classList.contains("dycalendar-date"))) {
                 console.log("date clicked!");
