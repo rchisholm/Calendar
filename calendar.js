@@ -396,11 +396,12 @@
             //prev-next button click
             //extra checks to make sure object exists and contains the class of interest
             if ((targetDomObject) && (targetDomObject.classList) && (targetDomObject.classList.contains("dycalendar-prev-next-btn"))) {
-                date = parseInt(targetDomObject.getAttribute("data-date"));
                 month = parseInt(targetDomObject.getAttribute("data-month"));
                 year = parseInt(targetDomObject.getAttribute("data-year"));
                 btn = targetDomObject.getAttribute("data-btn");
-                option = JSON.parse(targetDomObject.parentElement.getAttribute("data-option"));
+                header = targetDomObject.parentElement;
+                option = JSON.parse(header.getAttribute("data-option"));
+                date = option.date;
 
                 if (btn === "prev") {
                     month = month - 1;
@@ -421,7 +422,12 @@
                 option.month = month;
                 option.year = year;
 
+                header.setAttribute("data-option", JSON.stringify(option));
+
                 drawCalendar(option);
+
+                console.log("updated option:");
+                console.log(option);
             }
 
             //month click
