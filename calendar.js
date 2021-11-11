@@ -467,7 +467,7 @@
 
             // date click
             if ((targetDomObject) && (targetDomObject.classList) && (targetDomObject.classList.contains("dycalendar-date"))) {
-                header = targetDomObject.parentElement.parentElement.parentElement.parentElement.parentElement.firstChild;
+                header = targetDomObject.parentElement.parentElement.parentElement.parentElement.parentElement.getElementsByClassName('dycalendar-header')[0];
                 option = JSON.parse(header.getAttribute("data-option"));
                 option.date = parseInt(targetDomObject.innerHTML);
                 header.setAttribute("data-option", JSON.stringify(option));
