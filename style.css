@@ -1,48 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
-section.calendar * {
+section.calendar-section * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
-section.calendar {
+section.calendar-section {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #161623;
+    background: transparent;
     overflow: hidden;
 }
 
-section.calendar::before {
-    content: '';
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    background: linear-gradient(#ffc107, #f10915);
-    border-radius: 50%;
-    transform: translate(-250px, -120px);
-}
-
-section.calendar::after {
-    content: '';
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    background: linear-gradient(#2196f3, #b413e6);
-    border-radius: 50%;
-    transform: translate(250px, 150px);
-}
-
-section.calendar .box {
+section.calendar-section .box {
     position: relative;
     z-index: 1000;
 }
 
-section.calendar .container {
+section.calendar-section .container {
     position: relative;
     width: 400px;
     min-height: 400px;
@@ -59,19 +39,19 @@ section.calendar .container {
     margin: auto;
 }
 
-section.calendar #calendar {
+section.calendar-section .calendar {
     width: 100%;
     padding: 20px;
 }
 
-section.calendar #calendar table {
+section.calendar-section .calendar table {
     width: 100%;
     margin-top: 40px;
     border-spacing: 5px;
     border-collapse: unset;
 }
 
-section.calendar #calendar table td {
+section.calendar-section .calendar table td {
     color: #fff;
     padding: 10px;
     border-radius: 5px;
@@ -81,12 +61,12 @@ section.calendar #calendar table td {
     font-weight: bold;
 }
 
-section.calendar #calendar table td:hover {
+section.calendar-section .calendar table td:hover {
     background: #fff;
     color: #111 !important;
 }
 
-section.calendar #calendar table tr:nth-child(1) td {
+section.calendar-section .calendar table tr:nth-child(1) td {
     background: #fff;
     color: #111;
     border-radius: 5px;
@@ -94,7 +74,7 @@ section.calendar #calendar table tr:nth-child(1) td {
 
 }
 
-section.calendar .dycalendar-prev-next-btn.prev-btn {
+section.calendar-section .dycalendar-prev-next-btn.prev-btn {
 
     background: #fff;
     color: #111;
@@ -107,7 +87,7 @@ section.calendar .dycalendar-prev-next-btn.prev-btn {
     font-size: 25px;
 }
 
-section.calendar .dycalendar-prev-next-btn.next-btn {
+section.calendar-section .dycalendar-prev-next-btn.next-btn {
 
     background: #fff;
     color: #111;
@@ -120,14 +100,14 @@ section.calendar .dycalendar-prev-next-btn.next-btn {
     font-size: 25px;
 }
 
-section.calendar .dycalendar-span-month-year {
+section.calendar-section .dycalendar-span-month-year {
     color: #fff;
     font-size: 1.5rem;
     font-weight: 600;
 }
 
-section.calendar h3,
-section.calendar a {
+section.calendar-section h3,
+section.calendar-section a {
     padding-top: 50px;
     color: rgb(16, 191, 235);
     text-align: center;
