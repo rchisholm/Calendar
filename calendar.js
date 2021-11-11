@@ -119,7 +119,7 @@
     function drawCalendarMonthTable(data, option) {
 
         var
-            table,
+            table, title,
             div, container, elem,
             dateValue, monthValue, yearValue, targetId;
 
@@ -129,6 +129,18 @@
         //calendar container
         container = document.createElement("div");
         container.setAttribute("class", "dycalendar-month-container");
+
+        
+
+        //-------------------------- Title ------------------
+
+        //title
+        if(option.title) {
+            title = document.createElement("h2");
+            title.innerHTML = option.title;
+            title.setAttribute("class", "calendar-title");
+            container.appendChild(title);
+        }
 
         //-------------------------- Header ------------------
 
