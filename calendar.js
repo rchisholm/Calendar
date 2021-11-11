@@ -48,7 +48,7 @@
         //create 1st row for the day letters
         for (c = 0; c <= 6; c = c + 1) {
             td = document.createElement("td");
-            td.innerHTML = "SMTWTFS"[c];
+            td.innerHTML = "SMTWTFS" [c];
             tr.appendChild(td);
         }
         table.appendChild(tr);
@@ -196,12 +196,12 @@
         dateValue.id = targetId + "-date";
         dateValue.setAttribute("type", "hidden");
         dateValue.setAttribute("value", option.date);
-        
+
         monthValue = document.createElement("input");
         monthValue.id = targetId + "-month";
         monthValue.setAttribute("type", "hidden");
         monthValue.setAttribute("value", (option.month + 1));
-        
+
         yearValue = document.createElement("input");
         yearValue.id = targetId + "-year";
         yearValue.setAttribute("type", "hidden");
@@ -211,7 +211,7 @@
         container.appendChild(dateValue);
         container.appendChild(monthValue);
         container.appendChild(yearValue);
-        
+
 
         //return container
         return container;
@@ -436,8 +436,7 @@
                         year = year - 1;
                         month = 11;
                     }
-                }
-                else if (btn === "next") {
+                } else if (btn === "next") {
                     month = month + 1;
                     if (month > 11) {
                         year = year + 1;
@@ -496,7 +495,7 @@
         }
 
         var
-            self = this,    //pointing at dycalendar object
+            self = this, //pointing at dycalendar object
 
             dateObj = new Date(),
 
@@ -529,7 +528,7 @@
      * returns an object with date, month, year
      * @param {string} targetId id of the target calendar
      */
-    dycalendar.getDate = function(targetId) {
+    dycalendar.getDate = function (targetId) {
         if (
             document.getElementById(targetId) &&
             document.getElementById(targetId + "-date") &&
