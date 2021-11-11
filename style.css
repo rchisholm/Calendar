@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
-*{
+section.calendar *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
 }
-section
+section.calendar
 {
     position: relative;
     display:flex;
@@ -16,7 +16,7 @@ section
     background: #161623;
     overflow: hidden;
 }
-section::before
+section.calendar::before
 {
     content: '';
     position: absolute;
@@ -26,7 +26,7 @@ section::before
     border-radius: 50%;
     transform: translate(-250px,-120px);
 }
-section::after
+section.calendar::after
 {
     content: '';
     position: absolute;
@@ -36,12 +36,12 @@ section::after
     border-radius: 50%;
     transform: translate(250px,150px);
 }
-.box
+section.calendar .box
 {
     position: relative;
     z-index: 1000;
 }
-.container
+section.calendar .container
 {
     position: relative;
     width: 400px;
@@ -57,31 +57,35 @@ section::after
     justify-content: center;
     align-items: center;
 }
-#calendar
+section.calendar #calendar
 {
     width: 100%;
     padding: 20px;
 }
-#calendar table
+section.calendar #calendar table
 {
     width: 100%;
     margin-top: 40px;
     border-spacing: 5px;
+    border-collapse: unset;
 }
-#calendar table td
+section.calendar #calendar table td
 {
     color:#fff;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    text-align: center;
+    border-bottom: none;
+    font-weight: bold;
 }
-#calendar table td:hover
+section.calendar #calendar table td:hover
 {
    background:#fff;
    color:#111 !important;
     
 }
-#calendar table tr:nth-child(1) td
+section.calendar #calendar table tr:nth-child(1) td
 {
     background: #fff;
     color:#111;
@@ -89,13 +93,13 @@ section::after
     font-weight: 600;
     
 }
-
+section.calendar 
 .dycalendar-target-date
 {
     background: #fff;
-    color:#111; 
+    color:#111 !important; 
 }
-.dycalendar-prev-next-btn.prev-btn 
+section.calendar .dycalendar-prev-next-btn.prev-btn 
 
 {
     
@@ -109,7 +113,7 @@ section::after
     align-items: center;
     font-size: 25px;
 }
-.dycalendar-prev-next-btn.next-btn
+section.calendar .dycalendar-prev-next-btn.next-btn
 {
     
     background: #fff;
@@ -122,13 +126,14 @@ section::after
     align-items: center;
     font-size: 25px;
 }
-.dycalendar-span-month-year
+section.calendar .dycalendar-span-month-year
 {
     color:#fff;
     font-size: 1.5rem;
     font-weight: 600;
 }
-h3,a{
+section.calendar h3,
+section.calendar a{
     padding-top: 50px;
     color: rgb(16, 191, 235);
     text-align: center;
