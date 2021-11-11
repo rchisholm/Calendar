@@ -523,6 +523,33 @@
 
     //------------------------------ dycalendar.draw() ends here ------------
 
+
+    //------------------------------ dycalendar.getDate() ----------------------
+
+    /**
+     * returns an object with date, month, year
+     * @param {string} targetId id of the target calendar
+     */
+    dycalendar.getDate = function(targetId) {
+        if (
+            document.getElementById(targetId) &&
+            document.getElementById(targetId + "-date") &&
+            document.getElementById(targetId + "-month") &&
+            document.getElementById(targetId + "-year")
+        ) {
+            return {
+                date: document.getElementById(targetId + "-date").value,
+                month: document.getElementById(targetId + "-month").value,
+                year: document.getElementById(targetId + "-year").value,
+            };
+        } else {
+            global.console.error("Invalid target");
+            return false;
+        }
+    };
+
+    //------------------------------ dycalendar.getDate() ends here ------------
+
     /**
      * this function will draw the calendar inside the target container.
      */
